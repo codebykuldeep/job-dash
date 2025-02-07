@@ -134,6 +134,6 @@ export async function handleResetPassword(req,res) {
         
         return res.json(new ApiResponse(400,{message:'Password mismatch occurred'},false))
     } catch (error) {
-        return res.json(new ApiResponse(500,{message:'Update successful',error},false))
+        return res.json(new ApiResponse(500,{message:'Update failed',error},false))
     }
 }

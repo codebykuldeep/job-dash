@@ -19,7 +19,7 @@ function Home() {
       navigate(redirectToDashboard(user));
     }
     else{
-      navigate('/auth');
+      navigate('/login');
     }
     
   }

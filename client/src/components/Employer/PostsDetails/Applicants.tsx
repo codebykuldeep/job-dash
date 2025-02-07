@@ -8,6 +8,8 @@ import { Button } from '@mui/material';
 import AppModal from './AppModal';
 import ApplicantOption from './ApplicantOption';
 import DataShowTable from '../../Common/DataShowTable';
+import SendMessageButton from '../../Common/Message/SendMessageButton';
+import ChatIcon from "@mui/icons-material/Chat";
 
 function Applicants({ id }: { id: string }) {
   const [data, loading, error,update] = useFetch<IApplicant[]>(`posts/data/${id}`);
@@ -78,11 +80,11 @@ export const EmployerColumn:ColumnType[] = [
     id:'app_id',
     label:'App ID'
   },
-  {
-    id:'user_id',
-    label:'User ID',
+  // {
+  //   id:'user_id',
+  //   label:'User ID',
 
-  },
+  // },
   {
     id:'name',
     label:'name',
@@ -111,5 +113,13 @@ export const EmployerColumn:ColumnType[] = [
       }
       return "selected";
     }
-  }
+  },
+  {
+    id:'user_id',
+    label:'Message',
+    align:'center',
+    format:(value)=>{
+      return <SendMessageButton chatId={value}><ChatIcon/></SendMessageButton>
+    }
+  },
 ]

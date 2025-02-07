@@ -68,6 +68,9 @@
     border: 1px solid var(--grey);
     border-radius: 5px;
 }
+.msg_date{
+    font-size: 12px;
+}
 
 
 
@@ -86,6 +89,29 @@
 .message_btn{
     all: unset;
     cursor: pointer;
+}
+
+
+
+/* EMPTY BOX */
+.empty_box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.empty_img{
+    width: 100px;
+    height: 100px;
+}
+.empty_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 

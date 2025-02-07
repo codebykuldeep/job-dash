@@ -7,6 +7,7 @@ import { Button } from '@mui/material';
 import { nameFormatter } from '../../../helper/helperFunctions';
 import CallIcon from '@mui/icons-material/CallMade';
 import { dateValidation } from '../../../utils/validation';
+import SendMessageButton from '../../Common/Message/SendMessageButton';
 
 const style = {
   position: 'absolute',
@@ -34,7 +35,8 @@ export default function DetailModal({data,open,handleClose,update}:EmpModalProps
     const userData = data.user_data as unknown as IUser;
     const jobStatus = dateValidation(data.date)[1];
     const jobStatusValue =  jobStatus ? 'job expired' : 'active'
-
+    console.log(data);
+    
     const app_status = data.app_status === null ? 'pending' : Boolean(data.app_status) === true ?'selected' : 'rejected';
   return (
     <div>
@@ -55,16 +57,31 @@ export default function DetailModal({data,open,handleClose,update}:EmpModalProps
               ))}
               <p>
                 <span>Job post status :</span>
-                <span className={jobStatus ? classes.expired : classes.active}>{jobStatusValue}</span>
+                <span className={jobStatus ? classes.expired : classes.active}>
+                  {jobStatusValue}
+                </span>
               </p>
               <p>
                 <span>Applied resume :</span>
-                <span><a href={userData.resume} target='_blank' rel="noreferrer"><Button>Open <CallIcon/></Button></a></span>
+                <span>
+                  <a href={userData.resume} target="_blank" rel="noreferrer">
+                    <Button>
+                      Open <CallIcon />
+                    </Button>
+                  </a>
+                </span>
               </p>
+              {app_status === "selected" && (
+                <p>
+                  <span>Send Message :</span>
+                  <span><Button><SendMessageButton chatId={data.emp_id}>Send a Message</SendMessageButton></Button></span>
+                </p>
+              )}
               <p className={classes[app_status]}>
                 <span>Application status :</span>
                 <span>{app_status}</span>
               </p>
+              
             </Box>
             <Box className={classes.button}>
               <Button variant="contained" onClick={handleClose}>

@@ -84,11 +84,12 @@ function Register({handleFormChange}:RegisterProps) {
                         <FormControlLabel sx={{color:'text.primary'}} value="user" control={<Radio />} label="Jobseeker" />
                     </RadioGroup>
                 </Box>
-                <div className={classes.auth_btn}>
-                    <Button loading={submit} loadingPosition='end' type='submit' variant='contained'>Register</Button>
+                <div className={classes.auth_option}>
+                    <Button loading={submit} loadingPosition='end' type='submit' variant='contained' className={classes.auth_btn}>
+                        Register</Button>
                 </div>
             </form>
-            <Box sx={{color:'text.primary'}} className={classes.switch}>Already registered ! Click <button onClick={()=>handleFormChange('login')}>here</button></Box>
+            <Box sx={{color:'text.primary'}} className={classes.switch}>Already registered ! <button onClick={()=>handleFormChange('login')}>Login here</button></Box>
         </Box>
     </>
   )

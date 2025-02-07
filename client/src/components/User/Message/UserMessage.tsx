@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import classes from './user-Message.module.css'
 import MessageContacts from './MessageContacts';
 import ChatBox from './ChatBox';
@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../../store/store';
 
 
+
 function UserMessage() {
     const user = useSelector((state:RootState)=>state.userSlice.user);
     const socket = useMemo(()=>io('http://localhost:8000'),[])
@@ -17,12 +18,13 @@ function UserMessage() {
     const [room,setRoom] = useState<string>('');
     const [serverMessage,setServerMessage] = useState<IMessage[]>([]);
 
-    function setData(data:IUserWithRoom){
+    const setData = useCallback(function setData(data:IUserWithRoom){
         const room_id = data.room_id;
         setRoom(room_id);
         setSelectUser(data);
+        setServerMessage([]);
         socket.emit('join-room',room_id);
-    }
+    },[socket])
     function sendMessage(text:string){
         const newMessage:IMessage={
             content:text,
@@ -52,7 +54,7 @@ function UserMessage() {
     },[socket,user])
   return (
     <Box className={classes.container}>
-        <MessageContacts dataUrl={'chat/'+user!.role} setData={setData} />
+        <MessageContacts dataUrl={'chat/'+user!.role} setData={setData} room={room}/>
         {selectUser && room && <ChatBox room={room} socket={socket} messages={serverMessage} send={sendMessage} person={selectUser} user={user!}/>}
         {!selectUser && !room && <EmptyBox/>}
     </Box>
