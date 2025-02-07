@@ -1,4 +1,4 @@
-import { getListForEmployer, getListForUser } from "../lib/messages.js";
+import { createRoom, getListForEmployer, getListForUser } from "../lib/messages.js";
 import { ApiResponse } from "../utils/response.js";
 
 
@@ -17,6 +17,28 @@ export async function getChatListForEmployer(req,res) {
     try {
         const {emp_id} = req.user;
         const data = await getListForEmployer(emp_id);
+        return res.json(new ApiResponse(200,data,true));
+    } catch (error) {
+        console.log(error);
+        
+        return res.status(500).json(new ApiResponse(500,{message:'failed to fetch',error},false));
+    }
+}
+
+
+export async function handleCreateRoom(req,res) {
+    try {
+        const {id} = req.query;
+        let emp_id , user_id;
+        if(req.user.role === 'user'){
+            user_id = req.user.user_id;
+            emp_id = id;
+        }
+        else{
+            emp_id = req.user.emp_id;
+            user_id = id;
+        }
+        const data = await createRoom(emp_id,user_id);
         return res.json(new ApiResponse(200,data,true));
     } catch (error) {
         return res.status(500).json(new ApiResponse(500,{message:'failed to fetch',error},false));

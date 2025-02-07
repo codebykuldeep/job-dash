@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { AppDispatch } from '../../../store/store';
 import { userActions } from '../../../store/userSlice';
 import { useNavigate } from 'react-router-dom';
+import GoogleAuthMethod from './GoogleAuthMethod';
 
 interface LoginProps{
     handleFormChange:(q:string)=>void;
@@ -66,13 +67,14 @@ function Login({handleFormChange}:LoginProps) {
                         <p className={classes.error}>{submit.message}</p>
                     )
                 }
-                <div className={classes.auth_btn}>
-                    <Button type='submit' variant='contained' loading={submit.loading} loadingPosition="end"> 
+                <div className={classes.auth_option}>
+                    <Button type='submit' variant='contained' loading={submit.loading} loadingPosition="end" className={classes.auth_btn}> 
                       Login
                     </Button>
+                    <GoogleAuthMethod/>
                 </div>
             </form>
-            <Box  sx={{color:'text.primary'}} className={classes.switch}>New to our platform ! Click <button onClick={()=>handleFormChange('register')}>here</button></Box>
+            <Box  sx={{color:'text.primary'}} className={classes.switch}>New to our platform ! <button onClick={()=>handleFormChange('register')}>Register here</button></Box>
         </Box>
     </>
   )

@@ -22,3 +22,13 @@ export async function getChatsByRoomId(room_id){
     return res.rows;
 }
 
+
+export async function createRoom(emp_id,user_id){
+    const check = await db.query(`SELECT * FROM chat_room WHERE emp_id = $1 AND user_id = $2 ;`,[emp_id,user_id])
+    if(check.rows.length > 0){
+        return ;
+    }
+    const res = await db.query(`INSERT INTO chat_room(emp_id,user_id) VALUES( $1 , $2) ;`,[emp_id,user_id])
+    return res.rows;
+}
+

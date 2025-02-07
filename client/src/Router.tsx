@@ -57,8 +57,18 @@ export const routerRoutes = createBrowserRouter([
           path:'',
           element: <Home/>,
         },
+        // {
+        //   path:'auth',
+        //   loader:authPageLoader,
+        //   element: <AuthPage/>,
+        // },
         {
-          path:'auth',
+          path:'login',
+          loader:authPageLoader,
+          element: <AuthPage/>,
+        },
+        {
+          path:'register',
           loader:authPageLoader,
           element: <AuthPage/>,
         },

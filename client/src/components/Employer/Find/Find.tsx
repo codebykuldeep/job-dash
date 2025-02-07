@@ -6,6 +6,8 @@ import { IUser } from '../../../types/dataTypes';
 import { userServerConnect } from '../../../utils/http-methods/userMethods';
 import { ColumnType } from '../../../types/tableTypes';
 import DataShowTable from '../../Common/DataShowTable';
+import SendMessageButton from '../../Common/Message/SendMessageButton';
+import ChatIcon from "@mui/icons-material/Chat";
 
 function Find() {
     const [skill,setSkill] = useState('');
@@ -101,5 +103,13 @@ export const UserColumn:ColumnType[] = [
       }
       return <a href={value} target='_blank' rel='noreferrer'><Button>Open</Button></a>
     }
-  }
+  },
+  {
+    id:'user_id',
+    label:'Message',
+    align:'center',
+    format:(value)=>{
+      return <SendMessageButton chatId={value}><ChatIcon/></SendMessageButton>
+    }
+  },
 ]

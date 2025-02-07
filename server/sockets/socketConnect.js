@@ -8,11 +8,9 @@ async function connectSocketIo(socket){
     socket.on('message',({room,message,sender,reciever})=>{
         
         writeNewMessage(sender,reciever,message,room);
-        console.log('message : '  + message);
         socket.to(room).emit("receive", message);
     })
     socket.on('join-room',async (room)=>{
-        console.log(`User - ${room} joined room - ${room}`);
         
         socket.join(room);
         const data = await getChatsByRoomId(room);
