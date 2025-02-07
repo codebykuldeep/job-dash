@@ -1,0 +1,15 @@
+.container{
+    margin: 1.5rem 0;
+}
+.header{
+    font-weight: 600;
+}
+.detail{
+    margin: 0.5rem 0;
+}
+.line{
+    padding: 6px 0;
+}
+.line span:first-child{
+    font-weight: 600;
+}

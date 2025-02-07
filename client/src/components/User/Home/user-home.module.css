@@ -1,0 +1,59 @@
+.container{
+    padding: 2rem;
+    width: 100%;
+    max-height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;;
+    background-color: var(--dull-bg);
+    font-family: "Wix Madefor Display", "Wix Madefor Display Fallback", monospace,
+    serif;
+}
+
+.greeting{
+    font-size: 1.5rem;
+}
+.greeting span{
+    font-size: 2rem;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #7747ff;
+}
+
+
+
+.analytics{
+    margin: 2rem 0;
+}
+
+.summary_head{
+    margin: 0.8rem 0;
+}
+
+.card{
+    min-height: 100px;
+    border-bottom: 4px solid #00a264;
+}
+
+.count{
+    font-size: 2rem;
+    font-weight: 600;
+    padding-top: 0;
+}
+
+
+/* CHART CSS */
+
+.chart{
+    margin: 1rem 0;
+}
+
+.header{
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-bottom:2px solid #7747ff;
+    display: inline-block;
+}
+
+.pie_chart{
+    margin: 2rem 0;
+}

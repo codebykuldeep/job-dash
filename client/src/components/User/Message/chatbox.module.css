@@ -1,0 +1,93 @@
+.container{
+    width: 100%;
+    border: 1px solid var(--grey);
+    border-left: none;
+}
+
+
+/* HEADER */
+.header{
+    height: 60px;
+    border-bottom: 1px solid var(--grey);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.person{
+    padding: 6px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.person_img{
+    width: 40px;
+    height: 40px;
+}
+.person_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+/* MESSAGE CONTAINER */
+
+.message_container{
+    width: 100%;
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.message_box{
+    height: calc(100% - 80px);
+    width: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10px;
+}
+
+.send{
+    max-width: 40%;
+    margin: 5px 0;
+    align-self: flex-end;
+}
+.recieved{
+    max-width: 40%;
+    margin: 5px 0;
+    align-self: flex-start;
+}
+.message{
+    padding: 5px;
+    background-color: white;
+    border: 1px solid var(--grey);
+    border-radius: 5px;
+}
+
+
+
+/* MESSAGE INPUT  */
+.message_input{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 0 20px;
+}
+.message_field{
+    width: 100%;
+}
+.message_btn{
+    all: unset;
+    cursor: pointer;
+}
+
+
+
+

@@ -1,0 +1,40 @@
+.container{
+    width: 100%;
+    /* background-color: var(--bodyBg); */
+    
+    max-height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;;
+    font-family: "Wix Madefor Display", "Wix Madefor Display Fallback", monospace,
+    serif;
+    padding: 2rem;
+}
+
+.greeting{
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin-bottom:1.5rem ;
+}
+
+.pending{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pending .warning{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.pending .alert{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}

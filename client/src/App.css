@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Wix+Madefor+Display:wght@400..800&display=swap');
+
+:root{
+  --bgColor:#18251b;
+  --errorColor:#d32f2f;
+  --dashBg:#2a2a2a;
+  --bodyBg:#202020;
+  --grey-color:#7e7e7e;
+  --dull-bg:#f2f2f2;
+  --grey: rgb(221, 221, 221);
+  --homeBg:#e2e6e9;
+}
+
+.mode{
+  position: relative;
+  
+}
+
+.change-mode{
+  background-color: white;
+  padding: 2px 0;
+  padding-left: 10px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border: 1px solid var(--grey);
+  border-right: none;
+}
+.mode-button{
+  position: fixed;
+  z-index: 9999;
+  top: 10%;
+  right: 0;
+}
+
+.arrow_mode_button{
+  all: unset;
+  margin-top: 4px;
+  cursor: pointer;
+  color: black !important;
+}

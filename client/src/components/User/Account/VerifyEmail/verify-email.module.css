@@ -1,0 +1,30 @@
+
+.otp_box{
+    height: 50px;
+    width: 50px !important;
+    margin: 0 1rem;
+    font-size: 1.2rem;
+}
+
+.otp_box::-webkit-outer-spin-button,
+.otp_box::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.close{
+    margin: 15px;
+    text-align: right;
+}
+.close button{
+    all: unset;
+    cursor: pointer;
+}
+
+.otp_container{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}

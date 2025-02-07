@@ -1,0 +1,26 @@
+.container{
+    width: 100%;
+    max-height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;
+    padding: 2rem;
+    font-family: "Wix Madefor Display", "Wix Madefor Display Fallback", monospace,
+    serif;
+}
+
+.heading{
+    margin: 1rem 0;
+}
+.form{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.btn{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+

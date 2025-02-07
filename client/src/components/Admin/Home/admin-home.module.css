@@ -1,0 +1,23 @@
+.container{
+    width: 100%;
+    background-color: var(--bodyBg);
+    color: var(--grey-color);
+    max-height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;;
+    font-family: "Wix Madefor Display", "Wix Madefor Display Fallback", monospace,
+    serif;
+    padding: 2rem;
+}
+
+/* .welcome{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+} */
+.welcome{
+    font-size: 2rem;
+}

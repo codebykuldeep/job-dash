@@ -1,0 +1,73 @@
+.result_count{
+    margin: 1rem 0;
+}
+
+.loader{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+.empty{
+    margin: 1rem 0;
+    font-weight: 600;
+}
+
+
+.detail{
+    padding: 1rem;
+}
+
+.card_btn{
+    justify-content: flex-end;
+}
+
+.company{
+    font-size: 14px;
+    color: rgb(173, 171, 171);
+}
+
+.position{
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.meta,.meta_info{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.meta span:first-child{
+    background-color: #dfede2;
+    padding: 6px;
+    color: #2d8b41;
+}
+.meta span:last-child{
+    background-color: #dfede2;
+    padding: 6px;
+    color: var(--errorColor);
+}
+
+.info{
+    display: flex;
+    align-items: center;
+}
+
+.experience {
+    margin: 5px 0;
+}
+
+.experience span:first-child{
+    font-weight: 600;
+}
+
+.desc{
+    height: 120px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}

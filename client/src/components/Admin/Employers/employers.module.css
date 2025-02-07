@@ -1,0 +1,35 @@
+.container{
+    width: 100%;
+    max-height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;
+    padding: 2rem;
+    /* background-color: var(--dull-bg); */
+    font-family: "Wix Madefor Display", "Wix Madefor Display Fallback", monospace,
+    serif;
+}
+.heading{
+    margin: 1rem 0;
+}
+
+.rejected{
+    padding: 5px;
+    background-color: var(--errorColor);
+    color: white;
+    border-radius: 2px;
+    text-transform: capitalize;
+}
+.approved{
+    padding: 5px;
+    color: white;
+    background-color: rgb(127, 245, 73);
+    border-radius: 2px;
+    text-transform: capitalize;
+}
+.pending{
+    padding: 5px;
+    color: white;
+    background-color: #F29339;
+    border-radius: 2px;
+    text-transform: capitalize;
+}

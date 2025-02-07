@@ -1,0 +1,21 @@
+.container{
+    padding: 2rem;
+    width: 100%;
+    max-height: 100vh;
+    overflow-y: scroll;
+    background-color: var(--dull-bg);
+}
+
+.detail{
+    margin: 1rem 0;
+    background-color: white;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 7px;
+}
+.detail p{
+    margin: 6px 0;
+}
+.detail p span:first-child{
+    font-weight: 600;
+}
